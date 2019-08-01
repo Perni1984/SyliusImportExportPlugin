@@ -34,7 +34,9 @@
 
   - Run `composer require friendsofsylius/sylius-import-export-plugin --dev`
 
-3. Add plugin dependencies to your AppKernel.php file:
+3. Add plugin dependencies to your Bundles
+
+For Symfony 3.x - Add plugin dependencies to your AppKernel.php file:
 
 ````php
 public function registerBundles()
@@ -45,6 +47,18 @@ public function registerBundles()
     ]);
 }
 ````
+
+For Symfony 4.x - Add plugin dependencies to your bundles.php file:
+
+````php
+<?php
+
+return [
+    ...
+    FriendsOfSylius\SyliusImportExportPlugin\FOSSyliusImportExportPlugin::class => ['all' => true],
+];
+````
+
 
 ## Configuration
 
